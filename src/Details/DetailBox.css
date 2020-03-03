@@ -1,4 +1,13 @@
 .detail-box {
   color: lime;
-  padding: 5px;
+  background-color: darkslategrey;
+  padding: 10px;
+  text-align: right;
+  opacity: 80%;
+  width: 80%;
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
