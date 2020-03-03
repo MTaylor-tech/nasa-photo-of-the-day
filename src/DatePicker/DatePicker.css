@@ -1,7 +1,12 @@
 .date-picker {
   color: lime;
   background: black;
+}
+
+.date-box {
   position: absolute;
   left: 10px;
   top: 300px;
+  border: 2px solid lime;
+  padding: 2px;
 }
