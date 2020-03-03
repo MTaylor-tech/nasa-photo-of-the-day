@@ -14,6 +14,7 @@ const datePrefix = "&date=";
 function App() {
   const [mediaData, setMediaData] = useState('');
   const [dateString, setDateString] = useState('');
+  const [date, setDate] = useState('');
   const [showDetails, setShowDetails] = useState(false);
   const [showDate, setShowDate] = useState(false);
 
@@ -30,8 +31,8 @@ function App() {
 
   const changeDate = () => {
     const newDate = document.getElementById("datePicker").value;
-    console.log(`${datePrefix}${newDate}`);
     setDateString(`${datePrefix}${newDate}`);
+    setDate(newDate);
   };
 
   return (
@@ -39,7 +40,7 @@ function App() {
       <MediaFrame mediaData={mediaData} />
       <ButtonContainer detailsFunction={()=>setShowDetails(!showDetails)} dateFunction={()=>setShowDate(!showDate)} />
       {showDetails?<DetailBox mediaData={mediaData} />:''}
-      {showDate?<DatePicker dateFunction={changeDate} id="datePicker" />:''}
+      {showDate?<DatePicker dateFunction={changeDate} id="datePicker" date={date} />:''}
     </div>
   );
 }
