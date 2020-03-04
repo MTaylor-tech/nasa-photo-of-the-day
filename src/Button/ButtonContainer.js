@@ -7,6 +7,7 @@ function ButtonContainer (props) {
     <div className="button-container">
       <Button text='details' icon='fas fa-info-circle fa-3x' onClick={props.detailsFunction} />
       <Button text='choose date' icon='far fa-calendar-alt fa-3x' onClick={props.dateFunction} />
+      <Button text='best finds' icon='fas fa-exclamation-circle fa-3x' onClick={props.findsFunction} />
     </div>
   );
 }

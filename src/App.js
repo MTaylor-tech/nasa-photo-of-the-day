@@ -5,6 +5,7 @@ import ButtonContainer from "./Button/ButtonContainer.js";
 import DetailBox from "./Details/DetailBox.js";
 import MediaFrame from "./MediaFrame/MediaFrame.js";
 import DatePicker from "./DatePicker/DatePicker.js";
+import interestingFinds from "./interestingFinds.js";
 
 
 const apiKey = `api_key=DvijkRr9GB6oxQfL0Ch5ZmFcBIIa9aQrgH4q89yk`;
@@ -17,6 +18,7 @@ function App() {
   const [date, setDate] = useState('');
   const [showDetails, setShowDetails] = useState(false);
   const [showDate, setShowDate] = useState(false);
+  const [find, setFind] = useState(0);
 
   const getImage = () => {
       axios.get(`${apiUrl}${apiKey}${dateString}`)
@@ -36,10 +38,24 @@ function App() {
     //setShowDate(false); (works with Firefox, but not Safari)
   };
 
+  const nextFind = () => {
+    if (find >= interestingFinds.length) {
+      setDateString(`${datePrefix}${interestingFinds[0]}`);
+      console.log(interestingFinds[0]);
+      setDate(interestingFinds[0]);
+      setFind(1);
+    } else {
+      setDateString(`${datePrefix}${interestingFinds[find]}`);
+      console.log(interestingFinds[find]);
+      setDate(interestingFinds[find]);
+      setFind(find+1);
+    }
+  };
+
   return (
     <div className="App">
       <MediaFrame mediaData={mediaData} />
-      <ButtonContainer detailsFunction={()=>setShowDetails(!showDetails)} dateFunction={()=>setShowDate(!showDate)} />
+      <ButtonContainer detailsFunction={()=>setShowDetails(!showDetails)} dateFunction={()=>setShowDate(!showDate)} findsFunction={nextFind} />
       {showDetails?<DetailBox mediaData={mediaData} />:<></>}
       {showDate?<DatePicker dateFunction={changeDate} id="datePicker" date={date} />:<></>}
     </div>
