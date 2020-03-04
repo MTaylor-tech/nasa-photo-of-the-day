@@ -33,7 +33,7 @@ function App() {
     const newDate = document.getElementById("datePicker").value;
     setDateString(`${datePrefix}${newDate}`);
     setDate(newDate);
-    setShowDate(false);
+    //setShowDate(false); (works with Firefox, but not Safari)
   };
 
   return (
