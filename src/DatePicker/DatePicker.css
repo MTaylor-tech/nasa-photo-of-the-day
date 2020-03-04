@@ -1,12 +1,16 @@
 .date-picker {
   color: lime;
   background: black;
+  opacity: 75%;
 }
 
 .date-box {
   position: absolute;
-  left: 10px;
-  top: 300px;
+  left: 25px;
+  top: 200px;
   border: 2px solid lime;
   padding: 2px;
+  z-index: 3;
+  opacity: 75%;
+  background: lime;
 }
