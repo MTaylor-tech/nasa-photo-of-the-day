@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Oxanium|Quantico&display=swap');
+
 .detail-box {
   color: lime;
   background-color: darkslategrey;
   padding: 10px;
   text-align: right;
-  opacity: 80%;
+  opacity: 75%;
   width: 80%;
   position: absolute;
   right: 0px;
   top: 100px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  z-index: 2;
+}
+
+.justified {
+  text-align: justify;
+  font-family: 'Quantico', sans-serif;
 }

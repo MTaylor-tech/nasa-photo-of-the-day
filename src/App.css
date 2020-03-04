@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Oxanium|Quantico&display=swap');
+
 .App {
   text-align: center;
   background: black;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .App-logo {

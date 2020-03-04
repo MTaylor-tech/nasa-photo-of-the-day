@@ -33,14 +33,15 @@ function App() {
     const newDate = document.getElementById("datePicker").value;
     setDateString(`${datePrefix}${newDate}`);
     setDate(newDate);
+    setShowDate(false);
   };
 
   return (
     <div className="App">
       <MediaFrame mediaData={mediaData} />
       <ButtonContainer detailsFunction={()=>setShowDetails(!showDetails)} dateFunction={()=>setShowDate(!showDate)} />
-      {showDetails?<DetailBox mediaData={mediaData} />:''}
-      {showDate?<DatePicker dateFunction={changeDate} id="datePicker" date={date} />:''}
+      {showDetails?<DetailBox mediaData={mediaData} />:<></>}
+      {showDate?<DatePicker dateFunction={changeDate} id="datePicker" date={date} />:<></>}
     </div>
   );
 }
