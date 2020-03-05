@@ -1,14 +1,35 @@
 import React from "react";
-import "./DetailBox.css";
+//import "./DetailBox.css";
+import styled from "styled-components";
+
+const DetailContainer = styled.div`
+  color: lime;
+  background-color: darkslategrey;
+  padding: 10px;
+  text-align: right;
+  opacity: 75%;
+  width: 80%;
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 2;
+`;
+
+const Explanation = styled.p`
+  text-align: justify;
+  font-family: 'Quantico', sans-serif;
+`;
 
 function DetailBox (props) {
 
   return (
-    <div className="detail-box">
+    <DetailContainer>
       <p>{props.mediaData.title}</p>
       <p>{props.mediaData.date}</p>
-      <p className="justified">{props.mediaData.explanation}</p>
-    </div>
+      <Explanation>{props.mediaData.explanation}</Explanation>
+    </DetailContainer>
   );
 }
 
