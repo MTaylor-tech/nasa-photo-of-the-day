@@ -1,6 +1,7 @@
 import React from "react";
 //import "./MediaFrame.css";
 import styled from "styled-components";
+import { Spinner } from 'reactstrap';
 
 const ImageFrame = styled.img`
   width: 100%;
@@ -20,7 +21,7 @@ function MediaFrame (props) {
   } else if (props.mediaData.media_type==='video') {
     return <VideoFrame scrolling="no" className="youTube" title={props.mediaData.title} type="text/html" src={props.mediaData.url}></VideoFrame>;
   } else {
-    return <h3>Loading...</h3>;
+    return <Spinner color="light" />;
   }
 }
 
