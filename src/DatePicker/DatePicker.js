@@ -19,7 +19,7 @@ const DateBox = styled.div`
   background: lime;
 `;
 
-const DatePickerInput = styled.input`
+const DatePickerInput = styled(DatePicker)`
   color: lime;
   background: black;
   opacity: 75%;
@@ -32,7 +32,7 @@ function DatePickerBox (props) {
 
   return (
     <DateBox className="date-box">
-      <DatePickerInput type="date" className="date-picker" onChange={props.dateFunction} id={props.id} value={props.date} />
+      <DatePickerInput type="date" className="date-picker" onChange={props.dateFunction} id={props.id} placeholderText={props.date} selected={props.selected} dateFormat='yyyy-MM-dd' endDate={props.endDate} />
     </DateBox>
   );
 }
