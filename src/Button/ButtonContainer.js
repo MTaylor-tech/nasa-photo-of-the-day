@@ -8,7 +8,6 @@ const ButtonBox = styled.div`
   position: absolute;
   left: 20px;
   top: 50px;
-  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

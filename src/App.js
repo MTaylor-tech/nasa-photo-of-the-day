@@ -11,8 +11,8 @@ import interestingFinds from "./interestingFinds.js";
 const apiKey = `api_key=DvijkRr9GB6oxQfL0Ch5ZmFcBIIa9aQrgH4q89yk`;
 const apiUrl = `https://api.nasa.gov/planetary/apod?`;
 const datePrefix = "&date=";
-const today = new Date();
-let currentDate = new Date();
+const today = new Date('2020-03-05');
+let currentDate = new Date('2020-03-05');
 
 function App() {
   const [mediaData, setMediaData] = useState('');
