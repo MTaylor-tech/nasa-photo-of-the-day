@@ -1,6 +1,9 @@
 import React from "react";
 //import "./DatePicker.css";
 import styled from "styled-components";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const DateBox = styled.div`
   position: absolute;
@@ -25,7 +28,7 @@ const DatePickerInput = styled.input`
     filter: alpha(opacity=75); /* For IE8 and earlier */
 `;
 
-function DatePicker (props) {
+function DatePickerBox (props) {
 
   return (
     <DateBox className="date-box">
@@ -34,4 +37,4 @@ function DatePicker (props) {
   );
 }
 
-export default DatePicker;
+export default DatePickerBox;
