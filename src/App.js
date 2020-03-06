@@ -34,24 +34,18 @@ function App() {
       .catch(error=>console.log(error));
   };
 
-  useEffect(()=>{setTimeout(getImage,200)},[dateString]);
+  useEffect(getImage,[dateString]);
 
   const changeDate = () => {
     console.log(`DPV: ${document.getElementById("datePicker").value}`);
-    //console.log(Date.parse(document.getElementById("datePicker").value));
     setDate(Date.parse(document.getElementById("datePicker").value));
     currentDate = new Date(document.getElementById("datePicker").value);
     console.log(`CD: ${currentDate}`);
-    //setDate(newDate);
-    //setDateString(`${datePrefix}${date.toString().substr(0,10)}`);
-    //console.log(`D: ${date.toString().substr(0,10)}`);
-    //setShowDate(false); (works with Firefox, but not Safari)
   };
 
-  useEffect(()=> { setTimeout(() => {
-    //currentDate = date;
+  useEffect(() => {
     setDateString(`${datePrefix}${currentDate.toISOString().substr(0,10)}`);
-    console.log(`D: ${currentDate.toISOString().substr(0,10)}`);},100)
+    console.log(`D: ${currentDate.toISOString().substr(0,10)}`);
   },[date]);
 
   const previous = () => {
