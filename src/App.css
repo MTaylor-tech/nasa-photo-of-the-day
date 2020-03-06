@@ -4,6 +4,8 @@
   text-align: center;
   background: black;
   font-family: 'Orbitron', sans-serif;
+  background-color: black;
+  height: 100vh;
 }
 
 .App-logo {

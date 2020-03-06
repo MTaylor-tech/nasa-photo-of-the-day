@@ -10,6 +10,9 @@ const DateBox = styled.div`
   padding: 2px;
   z-index: 3;
   opacity: 75%;
+    -moz-opacity: 0.75; /* Firefox and Mozilla browsers */
+    -webkit-opacity: 0.75; /* WebKit browser e.g. Safari */
+    filter: alpha(opacity=75); /* For IE8 and earlier */
   background: lime;
 `;
 
@@ -17,6 +20,9 @@ const DatePickerInput = styled.input`
   color: lime;
   background: black;
   opacity: 75%;
+    -moz-opacity: 0.75; /* Firefox and Mozilla browsers */
+    -webkit-opacity: 0.75; /* WebKit browser e.g. Safari */
+    filter: alpha(opacity=75); /* For IE8 and earlier */
 `;
 
 function DatePicker (props) {

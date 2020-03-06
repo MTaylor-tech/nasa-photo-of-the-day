@@ -6,9 +6,15 @@ const Btn = styled.div`
   color: lime;
   padding: 5px;
   opacity: 40%;
+    -moz-opacity: 0.4; /* Firefox and Mozilla browsers */
+    -webkit-opacity: 0.4; /* WebKit browser e.g. Safari */
+    filter: alpha(opacity=40); /* For IE8 and earlier */
 
   &:hover {
     opacity: 75%;
+      -moz-opacity: 0.75; /* Firefox and Mozilla browsers */
+      -webkit-opacity: 0.75; /* WebKit browser e.g. Safari */
+      filter: alpha(opacity=75); /* For IE8 and earlier */
   }
 
   &:hover .button-text {
@@ -23,6 +29,9 @@ const BtnText = styled.span`
   border-bottom-right-radius: 5px;
   padding: 2px;
   opacity: 75%;
+    -moz-opacity: 0.75; /* Firefox and Mozilla browsers */
+    -webkit-opacity: 0.75; /* WebKit browser e.g. Safari */
+    filter: alpha(opacity=75); /* For IE8 and earlier */
 `;
 
 function Button (props) {

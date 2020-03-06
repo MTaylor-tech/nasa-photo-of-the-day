@@ -8,6 +8,9 @@ const DetailContainer = styled.div`
   padding: 10px;
   text-align: right;
   opacity: 75%;
+    -moz-opacity: 0.75; /* Firefox and Mozilla browsers */
+    -webkit-opacity: 0.75; /* WebKit browser e.g. Safari */
+    filter: alpha(opacity=75); /* For IE8 and earlier */
   width: 80%;
   position: absolute;
   right: 0px;
