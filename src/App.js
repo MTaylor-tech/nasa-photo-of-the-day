@@ -36,6 +36,13 @@ function App() {
 
   useEffect(getImage,[dateString]);
 
+  const selectDate = (sdate) => {
+    console.log(`DV: ${sdate}`);
+    setDate(new Date(sdate));
+    currentDate = new Date(sdate);
+    console.log(`CD: ${currentDate}`);
+  };
+
   const changeDate = () => {
     console.log(`DPV: ${document.getElementById("datePicker").value}`);
     setDate(Date.parse(document.getElementById("datePicker").value));
@@ -88,7 +95,7 @@ function App() {
       <MediaFrame mediaData={mediaData} />
       <ButtonContainer detailsFunction={()=>setShowDetails(!showDetails)} dateFunction={()=>setShowDate(!showDate)} findsFunction={nextFind} prevFunction={previous} nextFunction={next} todayFunction={gotoToday} currentDate={currentDate} today={today} />
       {showDetails?<DetailBox mediaData={mediaData} />:<></>}
-      {showDate?<DatePicker dateFunction={changeDate} id="datePicker" date={currentDate.toISOString().substr(0,10)} />:<></>}
+      {showDate?<DatePicker dateFunction={(sdate)=>selectDate(sdate)} id="datePicker" date={currentDate.toISOString().substr(0,10)} selected={currentDate} endDate={today} />:<></>}
     </div>
   );
 }
